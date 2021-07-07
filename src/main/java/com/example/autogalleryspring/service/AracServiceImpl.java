@@ -36,6 +36,7 @@ public class AracServiceImpl implements IAracService {
             throw new Exception("Id dolu olamaz");
 
             Arac _arac = modelMapper.map(arac,Arac.class);
+            //deneme
             return modelMapper.map(aracRepo.save(_arac), AracDTO.class);
         }
 
