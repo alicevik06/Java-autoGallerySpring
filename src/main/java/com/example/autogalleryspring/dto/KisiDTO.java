@@ -1,5 +1,6 @@
 package com.example.autogalleryspring.dto;
 
+import com.example.autogalleryspring.entity.Hareket;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,6 +8,8 @@ import lombok.Setter;
 
 
 import java.util.Calendar;
+import java.util.List;
+
 @NoArgsConstructor
 @Getter
 @Setter
@@ -17,4 +20,5 @@ public abstract class KisiDTO extends BaseDTO{
     private Calendar dogumTarihi;
     private String tcKimlikNo;
     private Integer kisiTip;
+    private List<Hareket> hareketler;
 }

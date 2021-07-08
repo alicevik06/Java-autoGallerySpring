@@ -25,7 +25,7 @@ public class Hareket extends BaseEntity {
     @ManyToOne
     Stok stok;
 
-    @ManyToMany(mappedBy = "hareketler")
+    @ManyToMany
     List<Kisi> kisiler;
 
     //    @ManyToOne

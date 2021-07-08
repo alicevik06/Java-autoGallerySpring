@@ -17,7 +17,7 @@ import java.util.Calendar;
 @Getter
 @Setter
 @MappedSuperclass
- @NoArgsConstructor
+@NoArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 public abstract class BaseEntity {
     @Id

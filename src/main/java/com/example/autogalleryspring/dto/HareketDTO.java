@@ -1,9 +1,6 @@
 package com.example.autogalleryspring.dto;
 
 import com.example.autogalleryspring.entity.Abstract.Kisi;
-import com.example.autogalleryspring.entity.Alici;
-import com.example.autogalleryspring.entity.Araci;
-import com.example.autogalleryspring.entity.Satici;
 import com.example.autogalleryspring.enums.EnumHareketTipi;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,9 +19,7 @@ public class HareketDTO extends BaseDTO {
     private EnumHareketTipi hareketTipi;
     private StokDTO stok;
     private List<Kisi> kisiler;
-//    private AliciDTO alici;
-//    private SaticiDTO satici;
-//    private AraciDTO araci;
+
 
 
 }

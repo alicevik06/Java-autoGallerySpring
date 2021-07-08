@@ -5,6 +5,7 @@ import com.example.autogalleryspring.entity.Alici;
 import com.example.autogalleryspring.entity.Araci;
 import com.example.autogalleryspring.entity.Hareket;
 import com.example.autogalleryspring.entity.Satici;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.AllArgsConstructor;
@@ -42,8 +43,10 @@ public abstract class Kisi extends BaseEntity{
     String tcKimlikNo;
     @Column(insertable = false,updatable = false)
     Integer kisiTip;
-    @ManyToMany
+    @JsonIgnore
+    @ManyToMany(mappedBy = "kisiler")
     private List<Hareket> hareketler;
+
 
 
 
