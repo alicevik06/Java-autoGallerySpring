@@ -1,6 +1,7 @@
 package com.example.autogalleryspring.dto;
 
 import com.example.autogalleryspring.entity.Hareket;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,11 +15,9 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-public abstract class KisiDTO extends BaseDTO{
+public  class KisiDTO extends BaseDTO{
     private String adi;
     private String soyadi;
     private Calendar dogumTarihi;
     private String tcKimlikNo;
-    private Integer kisiTip;
-    private List<Hareket> hareketler;
 }

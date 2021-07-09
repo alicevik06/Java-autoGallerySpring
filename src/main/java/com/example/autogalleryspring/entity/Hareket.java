@@ -1,13 +1,11 @@
 package com.example.autogalleryspring.entity;
 
 import com.example.autogalleryspring.entity.Abstract.BaseEntity;
-import com.example.autogalleryspring.entity.Abstract.Kisi;
 import com.example.autogalleryspring.enums.EnumHareketTipi;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.Calendar;
@@ -24,9 +22,9 @@ public class Hareket extends BaseEntity {
     EnumHareketTipi hareketTipi;
     @ManyToOne
     Stok stok;
+    @ManyToMany(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
+    List<KisiGorev> kisiGorevler;
 
-    @ManyToMany
-    List<Kisi> kisiler;
 
     //    @ManyToOne
 //    Alici alici;

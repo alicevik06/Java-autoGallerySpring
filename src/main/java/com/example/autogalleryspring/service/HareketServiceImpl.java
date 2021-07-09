@@ -2,11 +2,11 @@ package com.example.autogalleryspring.service;
 
 
 import com.example.autogalleryspring.dto.HareketDTO;
-import com.example.autogalleryspring.dto.StokDTO;
-import com.example.autogalleryspring.entity.Abstract.Kisi;
+import com.example.autogalleryspring.entity.Kisi;
 import com.example.autogalleryspring.entity.Hareket;
-import com.example.autogalleryspring.entity.Stok;
+import com.example.autogalleryspring.entity.KisiGorev;
 import com.example.autogalleryspring.repo.IHareketRepo;
+import com.example.autogalleryspring.repo.IKisiGorevRepo;
 import com.example.autogalleryspring.repo.IStokRepo;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -23,12 +23,15 @@ public class HareketServiceImpl implements IHareketService {
     private IHareketRepo hareketRepo;
     private ModelMapper modelMapper;
     private IStokRepo stokRepo;
+    private IKisiGorevRepo kisiGorevRepo;
 
     @Autowired
-    public HareketServiceImpl(IHareketRepo hareketRepo, ModelMapper modelMapper, IStokRepo stokRepo) {
+    public HareketServiceImpl(IHareketRepo hareketRepo, ModelMapper modelMapper, IStokRepo stokRepo,IKisiGorevRepo kisiGorevRepo) {
         this.hareketRepo = hareketRepo;
         this.modelMapper = modelMapper;
         this.stokRepo=stokRepo;
+        this.kisiGorevRepo=kisiGorevRepo;
+
     }
 
     @Override
@@ -46,12 +49,13 @@ public class HareketServiceImpl implements IHareketService {
         if (hareket.getId() != null)
             throw new Exception("Id dolu olamaz");
 
-//        Hareket hk=new Hareket();
-//
+        Hareket hk=new Hareket();
+        KisiGorev kg=new KisiGorev();
 //        hk.setHareketTipi(hareket.getHareketTipi());
 //        hk.setHareketTarihi(hareket.getHareketTarihi());
 //        hk.setKisiler(hareket.getKisiler());
 //        hk.setStok(hareket.getStok());
+
 
         Hareket h = modelMapper.map(hareket, Hareket.class);
         return modelMapper.map(hareketRepo.save(h), HareketDTO.class);

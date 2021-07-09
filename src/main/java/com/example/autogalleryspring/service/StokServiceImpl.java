@@ -1,9 +1,6 @@
 package com.example.autogalleryspring.service;
 
-import com.example.autogalleryspring.dto.SaticiDTO;
 import com.example.autogalleryspring.dto.StokDTO;
-import com.example.autogalleryspring.entity.Arac;
-import com.example.autogalleryspring.entity.Satici;
 import com.example.autogalleryspring.entity.Stok;
 import com.example.autogalleryspring.repo.IAracRepo;
 import com.example.autogalleryspring.repo.IStokRepo;
